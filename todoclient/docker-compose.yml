@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  client:
+      build:
+          context: '.'
+          dockerfile: Dockerfile
+      volumes:
+          - ./todo-frontend:/app
+      ports:
+          - "8080:8080"
+      container_name: todoclient
+      networks:
+          - todoApp
+networks:
+  todoApp:
